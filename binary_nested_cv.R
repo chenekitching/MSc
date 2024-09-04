@@ -10,7 +10,7 @@ library(discrim)
 conflicted::conflict_prefer("spec", "yardstick")
 conflicted::conflicts_prefer(dplyr::filter)
 # Read files --------------------------------------------------------------
-ml_dat <- read.csv("binary_na_rm_af_repl_04-02.csv") %>%
+ml_dat <- read.csv("binary_ml_dataset_04-02.csv") %>%
   mutate_at(c("Assertion", "Func.refGene", "ExonicFunc.refGene"), as.factor) %>%
   mutate(Assertion = fct_relevel(Assertion, "P_LP")) 
 
