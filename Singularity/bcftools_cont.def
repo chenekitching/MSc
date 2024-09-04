@@ -1,0 +1,18 @@
+Bootstrap: docker 
+From: bitnami/minideb:bullseye 
+
+
+%runscript
+    echo "Building container..."
+
+
+%post
+
+    apt-get update && apt-get install -y locales-all git make gcc libz-dev liblzma-dev libbz2-dev libcurl4-openssl-dev
+
+    #install bcftools
+    git clone --recurse-submodules https://github.com/samtools/htslib.git
+    git clone https://github.com/samtools/bcftools.git
+    cd bcftools
+    make
+    make install

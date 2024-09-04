@@ -1,0 +1,19 @@
+Bootstrap: docker
+From: bitnami/minideb:bullseye
+
+%post
+    #install required utilities & dependencies necessary to add a new repo over https (for installing latest R version)
+    install_packages dirmngr gnupg apt-transport-https ca-certificates software-properties-common wget
+    #Add the publicly singed CRAN repository key to the sources.list file
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-key '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7'
+    add-apt-repository 'deb http://cloud.r-project.org/bin/linux/debian bullseye-cran40/'
+    #install shared library dependencies for R packages
+    install_packages libcurl4-openssl-dev libssl-dev libxml2-dev libblas-dev liblapack-dev libfontconfig1-dev
+    #install R and packages
+    install_packages r-base r-base-dev
+    #install required R packages
+    R --slave -e 'install.packages(c("shiny", "shinydashboard", "readr", "reactable", "dplyr", "DT", "flexdashboard", "fresh", "shinyBS", "conflicted"), repos="https://cloud.r-project.org/")'
+
+
+%test
+    R --version
