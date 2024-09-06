@@ -10,4 +10,8 @@ multinom_dataset.csv: The multinomial dataset consisting of P/LP and B/LB varian
 
 ## Singularity
 This folder contains definition files to build the following containers:
-
+| Definition file | Software | 
+|-----------|---------------|
+| bcftools_cont.def | BCFtools   | 
+| r_cont.def | R, with the following packages: dplyr, readr, tidymodels, modelr, ranger | 
+| shiny_cont.def  |  R, with the following packages: shiny, ggplot2, shinydashboard, readr, reactable, dplyr, DT, flexdashboard, fresh, shinyBS, conflicted | 
