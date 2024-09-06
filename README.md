@@ -10,8 +10,8 @@ This folder contains the following scripts:
 And the following files:
 | Script | Description | 
 |-----------|---------------|
-| binary_dataset.csv | The binary dataset consisting of P/LP and B/LB variants. |
-| multinom_dataset.csv | The multinomial dataset consisting of P/LP and B/LB variants |
+| binary_ml_dataset_04-02.csv | The binary dataset consisting of P/LP and B/LB variants. |
+| multinom_ml_dataset_04-02.csv | The multinomial dataset consisting of P/LP and B/LB variants |
 
 ## Singularity
 This folder contains definition files to build the following containers:
