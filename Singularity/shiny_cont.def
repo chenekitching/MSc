@@ -12,7 +12,7 @@ From: bitnami/minideb:bullseye
     #install R and packages
     install_packages r-base r-base-dev
     #install required R packages
-    R --slave -e 'install.packages(c("shiny", "shinydashboard", "readr", "reactable", "dplyr", "DT", "flexdashboard", "fresh", "shinyBS", "conflicted"), repos="https://cloud.r-project.org/")'
+    R --slave -e 'install.packages(c("shiny", "ggplot2", "shinydashboard", "readr", "reactable", "dplyr", "DT", "flexdashboard", "fresh", "shinyBS", "conflicted"), repos="https://cloud.r-project.org/")'
 
 
 %test
